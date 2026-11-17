@@ -8,9 +8,10 @@ To build a professional, responsive developer portfolio using HTML, CSS, and Jav
 
 ### 2. About Section
 ![About Section](screenshots/2.png)
+![About Section](screenshots/3.png)
 
 ### 3. Projects Section
-![Projects](screenshots/3.png)
+![Projects](screenshots/4.png)
 
 ### 4. Contact/Other
-![Contact](screenshots/4.png)
+![Contact](screenshots/5.png)
