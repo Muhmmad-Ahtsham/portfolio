@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Ahtsham — Backend Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+  </head>
+  <body>
+    <div id="global-3d-bg"></div>
+    <div class="frame">
+      <!-- NAV -->
+      <header class="nav" id="top">
+        <div class="nav-inner">
+          <a href="#top" class="logo">AHTSHAM</a>
+
+          <nav class="nav-links" id="navLinks">
+            <a href="#top" class="active">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About me</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact me</a>
+          </nav>
+
+          <a href="#contact" class="btn nav-cta">Hire Me</a>
+
+          <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <p class="hero-greeting">Hi I am</p>
+          <h2 class="hero-name">Muhammad Ahtsham</h2>
+          <h1 class="hero-title">Backend Software Engineer</h1>
+
+          <ul class="social-row" aria-label="Social links">
+            <li>
+              <a href="https://github.com/Muhammad-Ahtsham" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    fill="currentColor"
+                    d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.26.8-.58v-2.02c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.33-1.75-1.33-1.75-1.08-.75.08-.73.08-.73 1.2.08 1.83 1.24 1.83 1.24 1.07 1.82 2.8 1.3 3.48 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.28-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.9 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.81.57A12 12 0 0012 .5z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/ahtsham54t" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    fill="currentColor"
+                    d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.1-9.3L1 2h7.2l5 6.6L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <a href="CV.pdf" download class="btn btn-outline" id="downloadCv">Download CV</a>
+          </div>
+
+          <dl class="stats">
+            <div class="stat">
+              <dt>3+</dt>
+              <dd>Complex Systems Built</dd>
+            </div>
+            <div class="stat">
+              <dt>10+</dt>
+              <dd>Technologies Mastered</dd>
+            </div>
+            <div class="stat">
+              <dt>100%</dt>
+              <dd>Open Source Repos</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-glow" aria-hidden="true"></div>
+         <div id="hero-3d-container"></div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="section-head">
+          <h2>Technical expertise</h2>
+          <p>
+            Architecting scalable solutions and event-driven systems from the
+            ground up.
+          </p>
+        </div>
+
+        <div class="cards services-grid">
+          <article class="service-card">
+            <div class="service-icon" style="--c: #ff7a1a">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path
+                  fill="currentColor"
+                  d="M3 3h8v8H3V3zm10 0h8v5h-8V3zm0 7h8v11h-8V10zM3 13h8v8H3v-8z"
+                />
+              </svg>
+            </div>
+            <h3>Backend architecture</h3>
+            <p>
+              Designing highly scalable APIs and microservices using Node.js,
+              Express, and TypeScript.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" style="--c: #4fa3ff">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path
+                  fill="currentColor"
+                  d="M12 2l9 4.5v11L12 22l-9-4.5v-11L12 2zm0 2.2L5 7.6v8.8l7 3.4 7-3.4V7.6l-7-3.4zM12 8a4 4 0 110 8 4 4 0 010-8z"
+                />
+              </svg>
+            </div>
+            <h3>Distributed systems</h3>
+            <p>
+              Managing high-throughput data and background processing with
+              Redis, BullMQ, and Elasticsearch.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" style="--c: #8b7cff">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path
+                  fill="currentColor"
+                  d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 10.9 13 11.5 13 13h-2v-.5c0-1.1.45-1.7 1.17-2.42l1.24-1.26c.37-.36.59-.86.59-1.42a2 2 0 10-4 0H8a4 4 0 118 0c0 .8-.32 1.53-.93 2.25z"
+                />
+              </svg>
+            </div>
+            <h3>Event-driven streaming</h3>
+            <p>
+              Building real-time communication and data pipelines with Apache
+              Kafka and Amazon Kinesis.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" style="--c: #4fd48f">
+              <svg viewBox="0 0 24 24" width="26" height="26">
+                <path
+                  fill="currentColor"
+                  d="M4 4h16v2H4V4zm0 14h16v2H4v-2zm0-7h10v2H4v-2zm12 0h4v2h-4v-2z"
+                />
+              </svg>
+            </div>
+            <h3>Frontend integration</h3>
+            <p>
+              Developing seamless user interfaces with React, Tailwind CSS, and
+              Shadcn UI.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="about-visual" aria-hidden="true">
+          <div class="about-frame">
+            <svg viewBox="0 0 300 340" role="presentation">
+              <rect
+                x="0"
+                y="0"
+                width="300"
+                height="340"
+                rx="18"
+                fill="#161616"
+              />
+              <circle cx="150" cy="130" r="70" fill="#c99b78" />
+              <path
+                d="M100 100 C100 60 125 40 150 40 C178 40 200 62 200 100 C200 84 190 76 175 72 C170 64 158 58 146 58 C150 64 154 70 154 78 C136 64 114 66 104 78 C94 86 100 90 100 100Z"
+                fill="#241c14"
+              />
+              <rect
+                x="115"
+                y="185"
+                width="70"
+                height="50"
+                rx="8"
+                fill="#c99b78"
+              />
+              <path
+                d="M60 340 C60 270 100 235 150 235 C200 235 240 270 240 340 Z"
+                fill="#1e1e1e"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p class="eyebrow-plain">About me</p>
+          <h2>Building high-scale infrastructure and distributed systems</h2>
+          <p class="lead">
+            I'm Muhammad, an undergraduate software engineer focusing on backend
+            architecture, distributed logic, and scalable infrastructure.
+          </p>
+          <p>
+            I specialize in building robust platforms — from asynchronous
+            e-commerce systems to real-time collaborative applications. I
+            regularly write about system design trade-offs, message queue
+            patterns, and API logic.
+          </p>
+
+          <ul class="skill-list">
+            <li>
+              <span>Node.js / Express / TypeScript</span>
+              <div class="bar"><i style="width: 95%"></i></div>
+            </li>
+            <li>
+              <span>PostgreSQL / MongoDB / Prisma</span>
+              <div class="bar"><i style="width: 90%"></i></div>
+            </li>
+            <li>
+              <span>Redis / Kafka / Elasticsearch</span>
+              <div class="bar"><i style="width: 85%"></i></div>
+            </li>
+            <li>
+              <span>React / Tailwind CSS</span>
+              <div class="bar"><i style="width: 75%"></i></div>
+            </li>
+          </ul>
+
+          <a href="#" class="btn btn-outline" id="downloadCv2">Download CV</a>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="section" id="portfolio">
+        <div class="section-head">
+          <h2>Recent projects</h2>
+          <p>
+            A selection of complex systems and scalable applications I've built.
+          </p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="Filter portfolio">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="app">Apps</button>
+          <button class="filter-btn" data-filter="web">Web / Backend</button>
+        </div>
+
+        <div class="cards portfolio-grid" id="portfolioGrid">
+          <article class="work-card" data-cat="web">
+            <div class="work-thumb" style="--from: #10b981; --to: #0d2b21">
+              <svg viewBox="0 0 200 140">
+                <rect width="200" height="140" rx="12" fill="#1b1b1b" />
+                <rect
+                  x="15"
+                  y="15"
+                  width="170"
+                  height="18"
+                  rx="4"
+                  fill="#2a2a2a"
+                />
+                <rect
+                  x="15"
+                  y="45"
+                  width="80"
+                  height="80"
+                  rx="8"
+                  fill="#2a2a2a"
+                />
+                <rect
+                  x="105"
+                  y="45"
+                  width="80"
+                  height="36"
+                  rx="8"
+                  fill="#10B981"
+                  opacity="0.7"
+                />
+                <rect
+                  x="105"
+                  y="89"
+                  width="80"
+                  height="36"
+                  rx="8"
+                  fill="#2a2a2a"
+                />
+              </svg>
+            </div>
+            <div class="work-body">
+              <span class="work-tag">Architecture</span>
+              <h3>Asynchronous e-commerce platform</h3>
+              <p>
+                A robust backend built with MongoDB, Redis, and BullMQ,
+                featuring high-speed product indexing via Elasticsearch.
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card" data-cat="app">
+            <div class="work-thumb" style="--from: #4fa3ff; --to: #0f2540">
+              <svg viewBox="0 0 200 140">
+                <rect width="200" height="140" rx="12" fill="#1b1b1b" />
+                <rect
+                  x="20"
+                  y="20"
+                  width="70"
+                  height="100"
+                  rx="8"
+                  fill="#2a2a2a"
+                />
+                <rect
+                  x="30"
+                  y="30"
+                  width="50"
+                  height="8"
+                  rx="4"
+                  fill="#4FA3FF"
+                />
+                <rect x="30" y="46" width="50" height="6" rx="3" fill="#555" />
+                <rect x="30" y="58" width="35" height="6" rx="3" fill="#555" />
+                <circle cx="150" cy="65" r="35" fill="#2a2a2a" />
+                <circle cx="150" cy="65" r="20" fill="#4FA3FF" opacity="0.6" />
+              </svg>
+            </div>
+            <div class="work-body">
+              <span class="work-tag">Real-time</span>
+              <h3>Collaborative document editor</h3>
+              <p>
+                A live multi-user editing application engineered with React,
+                Tiptap extensions, and Liveblocks.
+              </p>
+            </div>
+          </article>
+
+          <article class="work-card" data-cat="web">
+            <div class="work-thumb" style="--from: #10b981; --to: #122a20">
+              <svg viewBox="0 0 200 140">
+                <rect width="200" height="140" rx="12" fill="#1b1b1b" />
+                <circle cx="60" cy="70" r="30" fill="#10B981" opacity="0.6" />
+                <path
+                  d="M60 70 L140 40 M60 70 L150 90 M60 70 L130 110"
+                  stroke="#2a2a2a"
+                  stroke-width="6"
+                  fill="none"
+                />
+                <circle cx="140" cy="40" r="8" fill="#2a2a2a" />
+                <circle cx="150" cy="90" r="8" fill="#2a2a2a" />
+                <circle cx="130" cy="110" r="8" fill="#2a2a2a" />
+              </svg>
+            </div>
+            <div class="work-body">
+              <span class="work-tag">Mapping / logistics</span>
+              <h3>Ride-sharing application</h3>
+              <p>
+                A comprehensive ride-hailing interface featuring dynamic route
+                geometry, real-time tracking, and ETA calculation using React
+                Leaflet and Express.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="contact-panel">
+          <div class="contact-info">
+            <p class="eyebrow-plain">Contact me</p>
+            <h2>Have a project in mind?</h2>
+            <p class="lead">
+              Tell me a little about it and I'll get back to you within a couple
+              of days.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    fill="currentColor"
+                    d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24l-7.4 5.55a1 1 0 01-1.2 0L4 8.24V18h16V8.24z"
+                  />
+                </svg>
+                ahtsham54t@gmail.com
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    fill="currentColor"
+                    d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11 11 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11 11 0 00.56 3.5 1 1 0 01-.25 1L6.6 10.8z"
+                  />
+                </svg>
+                +1 (555) 012-3456
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path
+                    fill="currentColor"
+                    d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"
+                  />
+                </svg>
+                Based in — available remote
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="What's this about?"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell me about your project"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              Send message
+            </button>
+            <p
+              class="form-status"
+              id="formStatus"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <a href="#top" class="logo">AHTSHAM</a>
+        <p>
+          &copy; <span id="year"></span> Muhammad Ahtsham. All rights reserved.
+        </p>
+        <a href="#top" class="back-top" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 4l-8 8h5v8h6v-8h5z" />
+          </svg>
+        </a>
+      </footer>
+    </div>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
